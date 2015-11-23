@@ -45,15 +45,30 @@
 <p>Rush hour game is sliding block puzzle. It invented in the 1970s by Nob Yoshigahara. The board of the game has 6<em>6 blocks and contains two type of vehicles. Car type has length of two blocks and truck type has length of three blocks. Where each type can move either horizontally or vertically. The target vehicle is a horizontal car in row 2. The goal is to move the  target vehicle to the exit(out of the board). Where each puzzle has its own configuration, so finding a way to move the target vehicle to the exit is not an easy because you have to figure out how to clean the way to the exit. My project focus on implementing A</em> with different heuristics to solve the game and make a comparisons between these methods.
 <img src="https://github.com/AbbasHommadi/AI-for-Rush-Hour-Game/blob/gh-pages/images/rush%20hour1.png?raw=true" alt=""></p>
 
-<h3>
-<a id="why" class="anchor" href="#why" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why</h3>
-
-<p>Games represent an excellent base to learn and implement different AI techniques. As well, rush hour is very interested game and finding out how different AI methods solve this game is really enjoyable way to master AI techniques.    </p>
-
 <h2>
-<a id="reference" class="anchor" href="#reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference</h2>
+<a id="experiments-setup" class="anchor" href="#experiments-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Experiments Setup:</h2>
 
-<p><a href="https://en.wikipedia.org/wiki/Rush_Hour_%28board_game%29">https://en.wikipedia.org/wiki/Rush_Hour_%28board_game%29</a></p>
+<ul>
+<li>Generate Random Initial Configurations.</li>
+<li>Apply hill climbing to these initial configuration to find out harder puzzle
+The below figure show how puzzles become harder after applying hill climbing algorithm
+<img src="https://github.com/AbbasHommadi/AI-for-Rush-Hour-Game/blob/gh-pages/images/hill%20climbing_3_9.png?raw=true" alt="">
+</li>
+<li>Apply A* with different heuristics
+Heuristics are:
+H0: zero heuristic (e.g. the A* algorithm acts like BFS).
+H1: the distance from target vehicle to the exit.<br>
+H2: the number of vehicles that are in the path of target vehicle to the exit.
+H3: H2 + the minimum number of vehicles that block the vehicles in H2
+Admissibility for Heuristics:
+For H0 is admissible because it always return 0 therefore it never overestimate the distance between current state to goal state. H1 computes the distance between target vehicles to the exit. As long the target vehicle become closer to the exit the distance decreases. So, it is admissible. H1 heuristic is admissible also because it return the number of vehicles that block target vehicle path and when the blocking vehicles become it means the path to the exit is clear. Finally, H3 is admissible because it return the lower number of vehicles that block the vehicles in H1 as well it check for redundant vehicles because sometimes same vehicle block more than one vehicle in H1.
+Results:
+This figure show comparison between different heuristics that I used depends on number of expanded nodes:
+<img src="https://github.com/AbbasHommadi/AI-for-Rush-Hour-Game/blob/gh-pages/images/h0_h1_h2_Comparisons%20depend%20on%20Expanded%20nodes.png?raw=true" alt="">
+## Reference
+<a href="https://en.wikipedia.org/wiki/Rush_Hour_%28board_game%29">https://en.wikipedia.org/wiki/Rush_Hour_%28board_game%29</a>
+</li>
+</ul>
       </section>
     </div>
 
