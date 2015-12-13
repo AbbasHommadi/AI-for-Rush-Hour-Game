@@ -47,36 +47,28 @@
 
 <p>The motivation of this project is finding an optimal solution for puzzles like rush hour is an easy job but finding faster and cleverer search is difficult. As well learning Artificial intelligence techniques through games that we are interested in is really fun way to master things.</p>
 
-<h2>
-<a id="experiments-setup" class="anchor" href="#experiments-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Experiments Setup:</h2>
+<h1>
+<a id="method" class="anchor" href="#method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Method</h1>
 
-<ul>
-<li>Generate Random Initial Configurations.</li>
-<li>Apply hill climbing to these initial configuration to find out harder puzzle
-The below figure show how puzzles become harder after applying hill climbing algorithm
-<img src="https://github.com/AbbasHommadi/AI-for-Rush-Hour-Game/blob/gh-pages/images/hill%20climbing_3_9.png?raw=true" alt="">
-</li>
-<li>Apply A* with different heuristics</li>
-</ul>
+<p>Step1: generated random puzzles with different number of vehicles.</p>
 
-<h3>
-<a id="heuristics-are" class="anchor" href="#heuristics-are" aria-hidden="true"><span class="octicon octicon-link"></span></a>Heuristics are:</h3>
+<p>Step2: Implementing Hill Climbing method to find harder puzzles (e.g. puzzles take longer steps to solve). The following figure show the hardness of puzzles before and after applying hill climbing.
+Figure2<br>
+Step4: Apply A* star algorithm with different heuristics to solve the puzzles</p>
 
-<p>H0: zero heuristic (e.g. the A* algorithm acts like BFS).
-H1: the distance from target vehicle to the exit. 
-H2: the number of vehicles that are in the path of target vehicle to the exit.
-H3: H2 + the minimum number of vehicles that block the vehicles in H2</p>
+<pre><code>The heuristics that I have used are:
+</code></pre>
 
-<h3>
-<a id="admissibility-for-heuristics" class="anchor" href="#admissibility-for-heuristics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Admissibility for Heuristics:</h3>
+<p>H0: Zero heuristics. Here the A* acts like BFS.</p>
 
-<p>For H0 is admissible because it always return 0 therefore it never overestimate the distance between current state to goal state. H1 computes the distance between target vehicles to the exit. As long the target vehicle become closer to the exit the distance decreases. So, it is admissible. H1 heuristic is admissible also because it return the number of vehicles that block target vehicle path and when the blocking vehicles become it means the path to the exit is clear. Finally, H3 is admissible because it return the lower number of vehicles that block the vehicles in H1 as well it check for redundant vehicles because sometimes same vehicle block more than one vehicle in H1.</p>
+<p>H1: Distance from target vehicle to the  exit.
+Figure3</p>
 
-<h2>
-<a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results:</h2>
+<p>H2: blocking heuristic e.g. count number of vehicles that block the way to the exit
+Figure3</p>
 
-<p>This figure show comparison between different heuristics that I used depends on number of expanded nodes:
-<img src="https://github.com/AbbasHommadi/AI-for-Rush-Hour-Game/blob/gh-pages/images/h0_h1_h2_Comparisons%20depend%20on%20Expanded%20nodes.png?raw=true" alt=""></p>
+<p>H3: lower bound blocking which is H2 plus the minimum number of vehicles that block these vehicles in H2.
+Figure4</p>
 
 <h2>
 <a id="reference" class="anchor" href="#reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference</h2>
