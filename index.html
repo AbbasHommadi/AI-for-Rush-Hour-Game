@@ -54,7 +54,20 @@
 
 <p><strong>Step2</strong>: Implementing Hill Climbing method to find harder puzzles (e.g. puzzles take longer steps to solve).</p>
 
-<p>The following figure show the hardness of puzzles before and after applying hill climbing.Figure2 </p>
+<p>The following the pseudo code for hill climbing:</p>
+
+<p><code>generateHarderPuzzlesUsingHillClimbing(startPuzzle)</code></p>
+
+<p><code>currentPuzzle = startPuzzle;</code></p>
+
+<p>While True:
+nextPuzzle = None
+for neighbor in currentPuzzle.getNextPossibleMoves():
+    if NumOfStepsToSolve(neighbor) &gt; NumOfStepsToSolve (nextPuzzle):
+                nextPuzzle = neighbor
+if NumOfStepsToSolve (nextPuzzle)&lt;=NumOfStepsToSolve(currentPuzzle):
+        return currentPuzzle
+currentPuzzle = nextPuzzle</p>
 
 <p><strong>Step4</strong>: Apply A* star algorithm with different heuristics to solve the puzzles </p>
 
