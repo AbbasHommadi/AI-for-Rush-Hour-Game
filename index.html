@@ -50,25 +50,15 @@
 <h1>
 <a id="method" class="anchor" href="#method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Method</h1>
 
-<p>Step1: generated random puzzles with different number of vehicles.</p>
-
-<p>Step2: Implementing Hill Climbing method to find harder puzzles (e.g. puzzles take longer steps to solve). The following figure show the hardness of puzzles before and after applying hill climbing.
-Figure2<br>
-Step4: Apply A* star algorithm with different heuristics to solve the puzzles</p>
-
-<pre><code>The heuristics that I have used are:
-</code></pre>
-
-<p>H0: Zero heuristics. Here the A* acts like BFS.</p>
-
-<p>H1: Distance from target vehicle to the  exit.
-Figure3</p>
-
-<p>H2: blocking heuristic e.g. count number of vehicles that block the way to the exit
-Figure3</p>
-
-<p>H3: lower bound blocking which is H2 plus the minimum number of vehicles that block these vehicles in H2.
-Figure4</p>
+<p><strong>Step1</strong>: generated random puzzles with different number of vehicles.
+<strong>Step2</strong>: Implementing Hill Climbing method to find harder puzzles (e.g. puzzles take longer steps to solve).
+ The following figure show the hardness of puzzles before and after applying hill climbing.Figure2 
+<strong>Step4</strong>: Apply A* star algorithm with different heuristics to solve the puzzles 
+The heuristics that I have used are: 
+<strong>H0</strong>: Zero heuristics. Here the A* acts like BFS. 
+<strong>H1</strong>: Distance from target vehicle to the  exit. Figure3 
+<strong>H2</strong>: blocking heuristic e.g. count number of vehicles that block the way to the exit Figure3 
+<strong>H3</strong>: lower bound blocking which is H2 plus the minimum number of vehicles that block these vehicles in H2. Figure4</p>
 
 <h2>
 <a id="reference" class="anchor" href="#reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference</h2>
