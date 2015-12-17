@@ -56,17 +56,16 @@
 
 <p>The following the pseudo code for hill climbing:</p>
 
-<pre><code> generateHarderPuzzlesUsingHillClimbing(startPuzzle)
-     currentPuzzle = startPuzzle;
-     While True:
+<p>generateHarderPuzzlesUsingHillClimbing(startPuzzle)
+       currentPuzzle = startPuzzle;
+       While True:
           nextPuzzle = None
           for neighbor in currentPuzzle.getNextPossibleMoves():
-               if NumOfStepsToSolve(neighbor) &gt; NumOfStepsToSolve (nextPuzzle):
-                  nextPuzzle = neighbor
+             if NumOfStepsToSolve(neighbor) &gt; NumOfStepsToSolve (nextPuzzle):
+                nextPuzzle = neighbor
           if NumOfStepsToSolve (nextPuzzle)&lt;=NumOfStepsToSolve(currentPuzzle):
              return currentPuzzle
-          currentPuzzle = nextPuzzle
-</code></pre>
+          currentPuzzle = nextPuzzle</p>
 
 <p><strong>Step4</strong>: Apply A* star algorithm with different heuristics to solve the puzzles </p>
 
